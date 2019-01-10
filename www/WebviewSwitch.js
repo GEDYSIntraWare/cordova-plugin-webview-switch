@@ -9,7 +9,7 @@ WebviewSwitch.prototype.load = function (name, successCallback, errorCallback) {
     errorCallback,
     "WebviewSwitch",
     "load",
-    name
+    [name]
   );
 };
 
