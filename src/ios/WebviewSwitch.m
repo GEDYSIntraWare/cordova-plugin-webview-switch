@@ -35,9 +35,10 @@
 
 - (void) loadDefaultWebview {
     NSString *defaultWebview = [self.userDefaults stringForKey:@"WebViewSwitch"];
-    NSLog(@"WebviewSwitch: Load default webview %@", defaultWebview);
     if (NSClassFromString(defaultWebview) &&
         ![self.webViewEngine isKindOfClass: NSClassFromString(defaultWebview)]) {
+        
+        NSLog(@"WebviewSwitch: Load default webview %@", defaultWebview);
         [self loadWebview:defaultWebview];
     }
 }
