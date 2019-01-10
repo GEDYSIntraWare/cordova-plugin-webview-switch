@@ -1,4 +1,6 @@
 #import <Cordova/CDV.h>
+#import <Cordova/NSDictionary+CordovaPreferences.h>
+#import <objc/runtime.h>
 
 @interface CDVViewController()
 - (void)createGapView;
@@ -15,8 +17,8 @@
 
 @synthesize userDefaults = _userDefaults;
 
-+ (void) loadWebview:(NSString*)name{
-  CDVViewController* mainview = (CDVViewController*)self.viewController;
+- (void) loadWebview:(NSString*)name{
+        CDVViewController* mainview = (CDVViewController*)self.viewController;
         [mainview.settings setCordovaSetting:name forKey:@"CordovaWebViewEngine"];
         [mainview.webView removeFromSuperview];
         //mainview.webViewEngine = nil;
@@ -47,6 +49,6 @@
     [self.userDefaults synchronize];
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Switching webview!"];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-    [self loadWebview:value]
+    [self loadWebview:value];
 }
 @end
