@@ -33,5 +33,3 @@ This plugin creates the global Javascript object `WebviewSwitch` which has the f
 Examples:
 * Switch to default Cordova UIWebview at runtime: `WebviewSwitch.load('CDVUIWebViewEngine')`
 * Switch to WKWebview at runtime: `WebviewSwitch.load('CDVWKWebViewEngine')`
-
-The last used webview is saved and started during the next app launch. The apps starts with an non-default view the start will slow down and might cause UI flicker.

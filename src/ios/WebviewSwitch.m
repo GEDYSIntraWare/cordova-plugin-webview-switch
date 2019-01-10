@@ -10,13 +10,10 @@
 
 }
 
-@property (nonatomic,retain) NSUserDefaults *userDefaults;
 @property (nonnull,retain) CDVViewController* mainview;
 @end
 
 @implementation WebviewSwitch
-
-@synthesize userDefaults = _userDefaults;
 
 - (void) loadWebview:(NSString*)name{
         [self.mainview.settings setCordovaSetting:name forKey:@"CordovaWebViewEngine"];
@@ -33,22 +30,8 @@
         }
 }
 
-- (void) loadDefaultWebview {
-    NSString *defaultWebview = [self.userDefaults stringForKey:@"WebViewSwitch"];
-    if (NSClassFromString(defaultWebview) &&
-        ![self.webViewEngine isKindOfClass: NSClassFromString(defaultWebview)]) {
-        
-        NSLog(@"WebviewSwitch: Load default webview %@", defaultWebview);
-        [self loadWebview:defaultWebview];
-    }
-}
-
 - (void) pluginInitialize {
     self.mainview = (CDVViewController*)self.viewController;
-    self.userDefaults = [[NSUserDefaults alloc] init];
-    
-    // load saved
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDefaultWebview) name:CDVPageDidLoadNotification object:nil];
     
     // TODO check available webviews?
 }
@@ -58,9 +41,6 @@
     NSString *value = [command argumentAtIndex:0
                                    withDefault:@"CDVUIWebViewEngine"
                                       andClass:[NSString class]];
-    //TODO add option to disable save
-    [self.userDefaults setValue:value forKey:@"WebViewSwitch"];
-    [self.userDefaults synchronize];
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Switching webview!"];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     [self loadWebview:value];
