@@ -17,11 +17,17 @@
     <keywords>cordova,webview,wkwebview,ios</keywords>
 
     <js-module src="www/WebviewSwitch.js" name="WebviewSwitch">
-    <clobbers target="WebviewSwitch"/>
-  </js-module>
+        <clobbers target="WebviewSwitch"/>
+    </js-module>
 
     <!-- ios -->
     <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="WebviewSwitch">
+                <param name="ios-package" value="WebviewSwitch" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
         <source-file src="src/ios/WebviewSwitch.m" />
     </platform>
 </plugin>
