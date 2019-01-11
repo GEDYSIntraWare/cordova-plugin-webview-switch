@@ -36,3 +36,4 @@ This plugin creates the global Javascript object `WebviewSwitch` which has the f
 Examples:
 * Switch to default Cordova UIWebview at runtime: `WebviewSwitch.load('CDVUIWebViewEngine')`
 * Switch to WKWebview at runtime: `WebviewSwitch.load('CDVWKWebViewEngine')`
+* The In-App-Browser plugin works too and shares the session. But don´t forget to set `usewkwebview` to the correct value if you need a shared session.
