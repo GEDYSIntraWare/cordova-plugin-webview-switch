@@ -7,13 +7,12 @@
     <name>cordova-plugin-webview-switch</name>
     <author>GEDYS IntraWare GmbH</author>
 	<description>Plugin to switch the webview implementation</description>
+    <license>MIT</license>
     <engines>
         <engine name="cordova-ios" version="4.5.5" />
     </engines>
     <repo>https://github.com/GEDYSIntraWare/cordova-plugin-webview-switch.git</repo>
     <issue>https://github.com/GEDYSIntraWare/cordova-plugin-webview-switch/issues</issue>
-
-	<license>MIT</license>
     <keywords>cordova,webview,wkwebview,ios</keywords>
 
     <js-module src="www/WebviewSwitch.js" name="WebviewSwitch">
