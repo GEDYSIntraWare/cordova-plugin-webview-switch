@@ -3,7 +3,7 @@
 #import <objc/runtime.h>
 
 @interface CDVViewController()
-- (void)createGapView;
+- (void)createGapView; //Internal funtion in Cordova controller which creates app view with webview
 @end
 
 @interface WebviewSwitch : CDVPlugin {
@@ -33,10 +33,9 @@
 - (void) pluginInitialize {
     self.mainview = (CDVViewController*)self.viewController;
     
-    // TODO check available webviews?
+    //check available webviews?
 }
 
-// Load data from URL
 - (void) load:(CDVInvokedUrlCommand*)command {
     NSString *value = [command argumentAtIndex:0
                                    withDefault:@"CDVUIWebViewEngine"
