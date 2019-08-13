@@ -9,7 +9,7 @@
 	<description>Plugin to switch the webview implementation</description>
     <license>MIT</license>
     <engines>
-        <engine name="cordova-ios" version="4.5.5" />
+        <engine name="cordova-ios" version=">=4.5.5" />
     </engines>
     <repo>https://github.com/GEDYSIntraWare/cordova-plugin-webview-switch.git</repo>
     <issue>https://github.com/GEDYSIntraWare/cordova-plugin-webview-switch/issues</issue>
