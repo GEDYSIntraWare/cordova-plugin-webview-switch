@@ -1,6 +1,8 @@
 # cordova-plugin-webview-switch
 
->Experimental plugin to switch the webview and origin at runtime. Please read warning before using it in production apps.
+## Experimental plugin to switch the webview and origin at runtime.
+
+> Please read warning and do not use it in production apps.
 
 # Attention :warning:
 
