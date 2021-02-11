@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-webview-switch",
   "version": "0.2.0",
-  "description": "Switch wenbview implementation",
+  "description": "Switch webview implementation",
   "cordova": {
     "id": "cordova-plugin-webview-switch",
     "platforms": [
